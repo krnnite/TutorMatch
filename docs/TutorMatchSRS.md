@@ -41,24 +41,44 @@
 Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`.** Each story includes at least one **Given/When/Then** scenario.
 
 ### 2.1 Customer Stories
-- **US‑1 — <short title>**  
-  _Story:_ As a customer, I want … so that …  
+- **US‑1 — Making a Student Profile**  
+  _Story:_ As a customer, I want to be able to make a profile so that providers can see my information.  
   _Acceptance:_
   ```gherkin
-  Scenario: <happy path>
-    Given <preconditions>
-    When  <action>
-    Then  <observable outcome>
+  Scenario: Making a Student Profile
+    Given I am logged in as a Student
+    When  I click on "my profile" and select edit
+    Then  I can update information tied to my account
   ```
 
-- **US‑2 — <short title>**  
+- **US‑2 — Writing Reviews**  
+  _Story:_ As a customer, I want to leave reviews on services so tutors can get feedback.  
+  _Acceptance:_
+  ```gherkin
+  Scenario: Student writing reviews on services
+    Given Logged in as a Student
+    When  Going to a enrolled tutors page there will be a text box for reviews
+    Then  The tutor will recieve my feedback I left.
+  ```
+
+- **US‑3 — Viewing Potential Tutors**  
+  _Story:_ As a customer, I want to browse a list of available tutors  
+  _Acceptance:_
+  ```gherkin
+  Scenario: Browsing avaliable tutors
+    Given When logged in as a Student
+    When  On the student homepage
+    Then  A list of avalible tutors will be shown with a search bar.
+  ```
+
+- **US‑4 — Viewing Current Tutors**  
   _Story:_ As a customer, I want … so that …  
   _Acceptance:_
   ```gherkin
-  Scenario: <happy path>
-    Given <preconditions>
-    When  <action>
-    Then  <observable outcome>
+  Scenario: Viewing currently enrolled tutors
+    Given When logged in as a Student
+    When  Going to the "my profile" page
+    Then  There will be a list of tutors you are currently connected with.
   ```
 
 ### 2.2 Provider Stories
@@ -127,10 +147,10 @@ Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`
 ---
 
 ## 3. Non‑Functional Requirements (make them measurable)
-- **Performance:** description 
-- **Availability/Reliability:** description
-- **Security/Privacy:** description
-- **Usability:** description
+- **Performance:** 95% of server requests such as reaching out to a tutor/student should be processed in 10 seconds.  
+- **Availability/Reliability:** The service should be online 95% of the time, with scheduled maintenance made clear.  
+- **Security/Privacy:** The service will have the users create logins, and that information should be encrypted and protected.
+- **Usability:** New users should be able to navigate with ease, able to find a course within 5 min of creating a account.
 
 ---
 
