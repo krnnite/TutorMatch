@@ -1,0 +1,19 @@
+.tm-gutter {
+    display: grid;
+    height: 100%;
+    background-color: white;
+}
+.tm-main {
+    display: grid;
+    height: 100%;
+}
+.tm-footer {
+
+}
+.tm-navbar {
+    background-color: #E3D7FF;
+}
+.tm-navbar-items {
+    display: flex;
+    
+}
