@@ -1,9 +1,25 @@
 .tm-main-container {
     background-color: white;
 }
+<<<<<<< HEAD
+=======
+.tm-left-gutter {
+    background-color: #AFA2FF;
+}
+.tm-right-gutter {
+    background-color: #AFA2FF;
+}
+>>>>>>> c6571df (feat: milestone)
 .tm-navbar {
     background-color: #E3D7FF;
 }
 .tm-navbar-slogan {
     font-style: italic;
+<<<<<<< HEAD
+=======
+}
+.nav-pills .nav-link.active {
+    background-color: #72788D;
+    color: white;
+>>>>>>> c6571df (feat: milestone)
 }
