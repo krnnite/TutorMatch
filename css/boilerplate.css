@@ -1,25 +1,14 @@
 .tm-main-container {
-    display: grid;
-    height: 100%;
     background-color: white;
 }
 .tm-left-gutter {
     background-color: #AFA2FF;
-
 }
 .tm-right-gutter {
     background-color: #AFA2FF;
 }
-.tm-main {
-    display: grid;
-    height: 100%;
-}
 .tm-navbar {
     background-color: #E3D7FF;
-}
-.tm-navbar-items {
-    display: flex;
-
 }
 .tm-navbar-slogan {
     font-style: italic;
