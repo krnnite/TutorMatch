@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 
-<html lang="en"> 
-    <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>Login</title> <link rel="stylesheet" href="loginPageStyles.css"> </head>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Edit Profile</title>
+        <link rel="stylesheet" href="../../css/header-nav.css">
+        <link rel="stylesheet" href="../../css/customer/editPageStyles.css">
+    </head>
 
 <body>
 
@@ -22,33 +27,42 @@
 
     <div class="editProfileBox">
 
-        <h1>Login</h1>
+        <h1>Edit Profile</h1>
 
         <div class="inputBoxes">
 
             <div class="inputGroup">
-                <label for="editName">Username</label>
+                <label for="editName">Name</label>
                 <input 
                     type="text" 
                     id="editName"
                     class="editName"
-                    placeholder="Enter your Username">
+                    placeholder="Enter your first and last name">
             </div>
 
             <div class="inputGroup">
-                <label for="editLevel">Password</label>
+                <label for="editLevel">Grade Level</label>
                 <input 
                     type="text" 
                     id="editLevel"
                     class="editLevel"
-                    placeholder="Enter your Password">
+                    placeholder="Enter your grade level">
+            </div>
+
+            <div class="inputGroup">
+                <label for="editCourses">Courses</label>
+                <input 
+                    type="text" 
+                    id="editCourses"
+                    class="editCourses"
+                    placeholder="Enter your course topics">
             </div>
 
         </div>
 
         <div class="editButtons">
-            <a href = "mainPage.html"><button type="button" class="confirmButton">OK</button></a>
-            <button type="button" class="cancelButton">Clear</button>
+            <button type="button" class="confirmButton">Save Changes</button>
+            <button type="button" class="cancelButton">Cancel</button>
         </div>
 
     </div>
