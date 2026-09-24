@@ -1,34 +1,3 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    background-color: #f7f8fa;
-    color: black;
-}
-/*Page Structure*/
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0px 60px 60px;
-}
-
-
-/*Main Page Header*/
-.header-container {
-  display: flex;
-  justify-content: space-between; 
-  align-items: center;            
-  flex-wrap: wrap;                
-  gap: 20px;                      
-}
-
-.page-header {
-    margin-bottom: 30px;
-}
-.page-header h1 {
-    margin: 0 0 8px;
-    font-size: 32px;
-}
-
 /*Search Bar*/
 .search-section {
     display: flex;
@@ -118,7 +87,6 @@ body {
     gap: 8px;
     margin-top: 40px;
 }
-
 .pagination a,
 .pagination span {
     padding: 8px 12px;
@@ -126,70 +94,13 @@ body {
     text-decoration: none;
     font-size: 14px;
 }
-
 .pagination a {
     border: 1px solid #ddd;
     border-radius: 4px;
     background-color: white;
 }
-
-
 .pagination a.active {
     background-color: purple;
     border-color: violet;
     color: white;
-}
-
-
-/* =========================
-   Tablet
-   ========================= */
-
-@media (max-width: 900px) {
-
-    .tutor-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-}
-
-
-/* =========================
-   Mobile
-   ========================= */
-
-@media (max-width: 600px) {
-
-    .nav-container {
-        flex-wrap: wrap;
-    }
-
-    .slogan {
-        display: none;
-    }
-
-    .nav-container nav {
-        margin-left: auto;
-    }
-
-    .container {
-        padding:
-            30px 16px 50px;
-    }
-
-    .page-header h1 {
-        font-size: 28px;
-    }
-
-    .tutor-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-container {
-        flex-direction: column;
-
-        gap: 15px;
-    }
-
 }

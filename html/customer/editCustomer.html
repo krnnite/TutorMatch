@@ -3,10 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>View Course</title>
+        <title>Edit Profile</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
         <link rel="stylesheet" href="../../css/header-footer.css">
-        <link rel="stylesheet" href="../../css/card-details.css">
+        <link rel="stylesheet" href="../../css/dashboard/edit-profile.css">
     </head>
     <body>
         <div class="d-flex flex-column min-vh-100">
@@ -25,7 +25,7 @@
                             <!---Navigation bar buttons-->
                             <ul class="nav nav-pills">
                                 <li class="nav-item mx-3">
-                                    <button type="button" class="btn btn-primary" onclick="location.href='customerHomepage.html'">Home</button>
+                                    <button type="button" class="btn btn-primary">Home</button>
                                 </li>
                                 <li class="nav-item">
                                     <button type="button" class="btn btn-primary" onclick="location.href='customerDashboard.html'">Student Profile</button>
@@ -35,24 +35,36 @@
                     </div>
                 </nav>
             </header>
+            <!-- Main Page Content -->
             <main class="container flex-grow-1">
-                
-                <h1 class="course-name">Intro to Brewing</h1>
-                <h2 class="tutor-name">Tutor: Jack Daniel</h2>
-                <p class="course-description">Description:
-                    Learn the basics from a master. This course will show you the ins and outs of brewing your own five star whisky!
-                    For fun only. Do not sell it without a liquor license.
-                </p>
-
-                <textarea class="review-box" placeholder="Input Review of this Course/Tutor"></textarea>
-                <button class="review-button">Submit</button>
+                <div class="editProfileBox">
+                    <h1>Edit Profile</h1>
+                    <div class="inputBoxes">
+                        <div class="inputGroup">
+                            <label for="editName">Name</label>
+                            <input type="text" id="editName" class="editName" placeholder="Enter your first and last name">
+                        </div>
+                        <div class="inputGroup">
+                            <label for="editLevel">Grade Level</label>
+                            <input type="text" id="editLevel" class="editLevel" placeholder="Enter your grade level">
+                        </div>
+                        <div class="inputGroup">
+                            <label for="editCourses">Courses</label>
+                            <input type="text" id="editCourses" class="editCourses" placeholder="Enter your course topics">
+                        </div>
+                    </div>
+                    <div class="editButtons">
+                        <button type="submit" class="confirmButton">Save Changes</button>
+                        <button type="button" class="cancelButton">Cancel</button>
+                    </div>
+                </div>
             </main>
-        </div>
+            <!-- Footer -->
+            <footer>
+                <div class="footer-container">
+                    <p>Tutor Match</p>
+                </div>
+            </footer>
+        </div>    
     </body>
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <p>Tutor Match</p>
-        </div>
-    </footer>
 </html>

@@ -1,24 +1,8 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    background-color: #f7f8fa;
-    color: black;
-}
-
-/*Page Structure*/
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0px 60px 60px;
-}
-
-.courseName{
+.course-name{
     text-align: center;
     text-emphasis: bold;
 }
-
-
-.reviewBox {
+.review-box {
     width: 100%;
     box-sizing: border-box;
     height: 300px;
@@ -31,8 +15,7 @@ body {
     resize: vertical;
     font-family: Arial, Helvetica, sans-serif;
 }
-
-.reviewButton{
+.review-button{
     height: 44px;
     padding: 0 22px;
     border-radius: 5px 5px 5px 5px;
