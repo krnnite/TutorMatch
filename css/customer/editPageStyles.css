@@ -92,24 +92,6 @@ color: #333;
 background-color: #ddd;
 }
 
-/* Footer Styles */
-footer {
-background-color: #AFA2FF;
-border-top: 1px solid #ddd;
-}
-
-.footer-container {
-max-width: 1200px;
-margin: 0 auto;
-padding: 25px 24px;
-text-align: center;
-}
-
-.footer-container p {
-margin: 0;
-color: #777;
-font-size: 14px;
-}
 
 /* Smaller Screens */
 @media (max-width: 600px) {
