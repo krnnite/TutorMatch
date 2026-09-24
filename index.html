@@ -8,6 +8,7 @@
     </head>
     <body>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <div></div>
         <header class="sticky-top">
             <nav class="navbar tm-navbar">
                 <div class="container">
@@ -33,71 +34,71 @@
             </nav>
         </header>
         <div class="container">
-            <div class="min-vh-100">
-                <!--Main page content goes within this tag-->
-                <main class="tm-main">
-                    <img src="assets/media/index_largeimage.jpg" class="img-fluid">
-                    <img src="assets/media/index_largeimage2.jpg" class="img-fluid">
-                    <img src="assets/media/index_largeimage3.jpg" class="img-fluid">
-                    <img src="assets/media/index_largeimage4.jpg" class="img-fluid">
-                    <!--Provider Login Modal-->
-                    <div class="modal fade" data-bs-backdrop="static" id="providerLoginModal" tabindex="-1" aria-labelledby="providerLoginModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="providerLoginModalLabel">Login to TutorMatch!</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <form>
-                                        <div class="mb-3">
-                                            <label for="providerUsername" class="col-form-label">Username:</label>
-                                            <input type="text" class="form-control" id="providerUsername">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="providerPassword" class="col-form-label">Password:</label>
-                                            <input type="password" class="form-control" id="providerPassword">
-                                        </div>
-                                    </form>
-                                    <p>If you don't have an account, <span><a href="html/provider/userSignup.html">register here</a></span></p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary" onclick="location.href='html/provider/providerDashboard.html'">Login</button>
-                                </div>
+            <!--Main page content goes within this tag-->
+            <main class="container flex-grow-1">
+                <img src="assets/media/index_largeimage.jpg" class="img-fluid ">
+                <!--Provider Login Modal-->
+                <div class="modal fade" data-bs-backdrop="static" id="providerLoginModal" tabindex="-1" aria-labelledby="providerLoginModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="providerLoginModalLabel">Login to TutorMatch!</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="providerUsername" class="col-form-label">Username:</label>
+                                        <input type="text" class="form-control" id="providerUsername">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="providerPassword" class="col-form-label">Password:</label>
+                                        <input type="password" class="form-control" id="providerPassword">
+                                    </div>
+                                </form>
+                                <p>If you don't have an account, <span><a href="html/provider/createProviderAccount.html">register here</a></span></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary" onclick="location.href='html/provider/providerDashboard.html'">Login</button>
                             </div>
                         </div>
                     </div>
-                    <!--Student Login Modal-->
-                    <div class="modal fade" data-bs-backdrop="static" id="studentLoginModal" tabindex="-1" aria-labelledby="studentLoginModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="studentLoginModalLabel">Login to TutorMatch!</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <form>
-                                        <div class="mb-3">
-                                            <label for="studentUsername" class="col-form-label">Username:</label>
-                                            <input type="text" class="form-control" id="studentUsername">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="studentPassword" class="col-form-label">Password:</label>
-                                            <input type="password" class="form-control" id="studentPassword">
-                                        </div>
-                                    </form>
-                                    <p>If you don't have an account, <span><a href="html/customer/createAccountPage.html">register here</a></span></p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary" onclick="location.href='html/customer/mainPage.html'">Login</button>
-                                </div>
+                </div>
+                <!--Student Login Modal-->
+                <div class="modal fade" data-bs-backdrop="static" id="studentLoginModal" tabindex="-1" aria-labelledby="studentLoginModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="studentLoginModalLabel">Login to TutorMatch!</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="studentUsername" class="col-form-label">Username:</label>
+                                        <input type="text" class="form-control" id="studentUsername">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="studentPassword" class="col-form-label">Password:</label>
+                                        <input type="password" class="form-control" id="studentPassword">
+                                    </div>
+                                </form>
+                                <p>If you don't have an account, <span><a href="html/customer/createStudentAccount.html">register here</a></span></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary" onclick="location.href='html/customer/mainPage.html'">Login</button>
                             </div>
                         </div>
                     </div>
-                </main>
-            </div>
+                </div>
+            </main>
         </div>
+        <footer>
+            <div class=" container-fluid footer-container">
+                <p>Tutor Match</p>
+            </div>
+        </footer>
     </body>
 </html>
