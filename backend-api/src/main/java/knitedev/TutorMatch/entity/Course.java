@@ -1,17 +1,27 @@
 package knitedev.TutorMatch.entity;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "courses")
 public class Course {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @NotNull 
     private long tutorId;
 
+    @NotBlank 
     private String courseName;
 
+    @NotBlank 
     private String courseDescription;
 
+    @NotBlank
+    @Size(max = 50) 
     private String tutorName;
 
     public long getId() {

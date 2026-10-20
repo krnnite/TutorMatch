@@ -2,18 +2,30 @@ package knitedev.TutorMatch.entity;
 import java.time.LocalDate;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PastOrPresent;
+import jakarta.validation.constraints.Size;
 
 @Entity 
 @Table(name = "students")
 public class Student {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     
+    @NotBlank 
+    @Size(max = 50) 
     private String name;
     
+    @PastOrPresent
+    @NotNull 
     private LocalDate dayJoined;
 
-    private String gradeLevel;
+    @NotBlank
+    private String educationLevel;
 
+    @NotNull 
     private String topics;
 
     public long getId() {
@@ -40,12 +52,12 @@ public class Student {
         this.dayJoined = dayJoined;
     }
 
-    public String getGradeLevel() {
-        return gradeLevel;
+    public String getEducationLevel() {
+        return educationLevel;
     }
 
-    public void setGradeLevel(String gradeLevel) {
-        this.gradeLevel = gradeLevel;
+    public void setEducationLevel(String educationLevel) {
+        this.educationLevel = educationLevel;
     }
 
     public String getTopics() {
