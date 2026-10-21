@@ -15,6 +15,9 @@ public class Registration {
     @NotNull 
     private long studentId;
 
+    @NotNull 
+    private long courseId;
+
     public long getId() {
         return id;
     }
@@ -37,6 +40,14 @@ public class Registration {
 
     public void setStudentId(long studentId) {
         this.studentId = studentId;
+    }
+
+    public long getCourseId() {
+        return courseId;
+    }
+
+    public void setCourseId(long courseId) {
+        this.courseId = courseId;
     }
 
 }

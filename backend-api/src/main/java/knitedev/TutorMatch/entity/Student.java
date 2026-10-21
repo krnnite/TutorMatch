@@ -1,6 +1,5 @@
 package knitedev.TutorMatch.entity;
 import java.time.LocalDate;
-
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -17,16 +16,26 @@ public class Student {
     @NotBlank 
     @Size(max = 50) 
     private String name;
+
+    @NotBlank 
+    @Size(max = 50)
+    private String username;
+
+    @NotBlank 
+    @Size(min = 8, max = 74)
+    private String password;
     
     @PastOrPresent
     @NotNull 
     private LocalDate dayJoined;
 
     @NotBlank
+    @Size(max = 60)
     private String educationLevel;
 
-    @NotNull 
-    private String topics;
+    @NotBlank
+    @Size(max = 1000)
+    private String biography;
 
     public long getId() {
         return id;
@@ -60,11 +69,11 @@ public class Student {
         this.educationLevel = educationLevel;
     }
 
-    public String getTopics() {
-        return topics;
+    public String getBiography() {
+        return biography;
     }
 
-    public void setTopics(String topics) {
-        this.topics = topics;
+    public void setBiography(String biography) {
+        this.biography = biography;
     }
 }

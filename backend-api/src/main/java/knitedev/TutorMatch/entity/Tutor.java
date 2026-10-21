@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;
-import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
@@ -20,11 +19,25 @@ public class Tutor {
     @Size(max = 50) 
     private String name;
     
+    @NotBlank 
+    @Size(max = 50)
+    private String username;
+
+    @NotBlank 
+    @Size(min = 8, max = 74)
+    private String password;
+
     @PastOrPresent 
     @NotNull 
     private LocalDate dayJoined;
 
-    private InstructionLevel instructionLevel;
+    @NotBlank
+    @Size(max = 60)
+    private String educationLevel;
+
+    @NotBlank
+    @Size(max = 1000)
+    private String biography;
 
     public Tutor() {
     }
@@ -45,6 +58,14 @@ public class Tutor {
         this.name = name;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public LocalDate getDayJoined() {
         return dayJoined;
     }
@@ -53,11 +74,19 @@ public class Tutor {
         this.dayJoined = dayJoined;
     }
 
-    public InstructionLevel getInstructionLevel() {
-        return instructionLevel;
+    public String getEducationLevel() {
+        return educationLevel;
     }
 
-    public void setInstructionLevel(InstructionLevel instructionLevel) {
-        this.instructionLevel = instructionLevel;
+    public void setEducationLevel(String educationLevel) {
+        this.educationLevel = educationLevel;
+    }
+
+    public String getBiography() {
+        return biography;
+    }
+
+    public void setBiography(String biography) {
+        this.biography = biography;
     }
 }

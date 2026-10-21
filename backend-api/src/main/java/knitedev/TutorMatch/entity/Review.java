@@ -16,6 +16,9 @@ public class Review {
     @NotBlank 
     private String description;
 
+    @NotNull 
+    private long courseId;
+
     public long getId() {
         return id;
     }
@@ -38,5 +41,13 @@ public class Review {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public long getCourseId() {
+        return courseId;
+    }
+
+    public void setCourseId(long courseId) {
+        this.courseId = courseId;
     }
 }

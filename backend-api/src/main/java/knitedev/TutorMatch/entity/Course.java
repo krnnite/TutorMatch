@@ -14,10 +14,13 @@ public class Course {
     @NotNull 
     private long tutorId;
 
-    @NotBlank 
+    //make unique
+    @NotBlank
+    @Size(max = 50) 
     private String courseName;
 
-    @NotBlank 
+    @NotBlank
+    @Size(max = 1000) 
     private String courseDescription;
 
     @NotBlank
