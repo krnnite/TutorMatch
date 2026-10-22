@@ -28,7 +28,7 @@ public class Review {
     private Course course;
 
     @NotNull
-    @OneToMany(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "student_id", nullable = false)
     private Student student;
 

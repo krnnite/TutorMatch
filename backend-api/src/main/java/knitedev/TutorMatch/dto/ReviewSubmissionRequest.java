@@ -6,7 +6,8 @@ import jakarta.validation.constraints.NotNull;
 
 public record ReviewSubmissionRequest(
     @NotNull @Min(1) @Max(5) int rating,
-    @NotBlank String description
+    @NotBlank String description,
+    @NotNull long studentId
 ) {
     
 }

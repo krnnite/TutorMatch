@@ -4,7 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import knitedev.TutorMatch.entity.Registration;
 
 public interface RegistrationRepository extends JpaRepository<Registration, Long> {
-    List<Registration> findAllByCourseId(long courseId);
-
-    List<Registration> findAllByStudentId(long studentId);
+    List<Registration> findAllByCourse_Id(long courseId);
+    List<Registration> findAllByStudent_Id(long studentId);
 }

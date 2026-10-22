@@ -30,7 +30,7 @@ public class Course {
     @JoinColumn(name = "tutor_id", nullable = false) 
     private Tutor tutor;
 
-    @OneToMany(mappedBy = "courses", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
     private List<Review> reviews = new ArrayList<>();
 

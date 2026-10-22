@@ -4,5 +4,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import knitedev.TutorMatch.entity.Review;
 
 public interface ReviewRepository extends JpaRepository<Review, Long> {
-    List<Review> findAllByCourseId(long courseId);
+    List<Review> findAllByCourse_Id(long courseId);
 }
