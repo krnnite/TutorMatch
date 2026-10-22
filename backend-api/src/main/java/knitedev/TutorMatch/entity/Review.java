@@ -1,5 +1,7 @@
 package knitedev.TutorMatch.entity;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -10,14 +12,25 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     
-    @NotNull 
-    private float rating;
+    @NotNull
+    @Min(1)
+    @Max(5)
+    @Column(nullable = false) 
+    private int rating;
     
-    @NotBlank 
+    @NotBlank
+    @Column(nullable = false) 
     private String description;
 
     @NotNull 
-    private long courseId;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "course_id", nullable = false)
+    private Course course;
+
+    @NotNull
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "student_id", nullable = false)
+    private Student student;
 
     public long getId() {
         return id;
@@ -27,11 +40,11 @@ public class Review {
         this.id = id;
     }
 
-    public float getRating() {
+    public int getRating() {
         return rating;
     }
 
-    public void setRating(float rating) {
+    public void setRating(int rating) {
         this.rating = rating;
     }
 
@@ -43,11 +56,19 @@ public class Review {
         this.description = description;
     }
 
-    public long getCourseId() {
-        return courseId;
+    public Course getCourse() {
+        return course;
     }
 
-    public void setCourseId(long courseId) {
-        this.courseId = courseId;
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
     }
 }

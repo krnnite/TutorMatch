@@ -1,4 +1,8 @@
 package knitedev.TutorMatch.entity;
+import java.util.ArrayList;
+import java.util.List;
+import org.hibernate.validator.constraints.UniqueElements;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -11,21 +15,24 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @NotNull 
-    private long tutorId;
-
-    //make unique
     @NotBlank
-    @Size(max = 50) 
+    @Size(max = 50)
+    @Column(length = 50, nullable = false, unique = true)
     private String courseName;
 
     @NotBlank
-    @Size(max = 1000) 
+    @Size(max = 1000)
+    @Column(length = 1000, nullable = false) 
     private String courseDescription;
 
-    @NotBlank
-    @Size(max = 50) 
-    private String tutorName;
+    @NotNull
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "tutor_id", nullable = false) 
+    private Tutor tutor;
+
+    @OneToMany(mappedBy = "courses", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
+    private List<Review> reviews = new ArrayList<>();
 
     public long getId() {
         return id;
@@ -33,14 +40,6 @@ public class Course {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public long getTutorId() {
-        return tutorId;
-    }
-
-    public void setTutorId(long tutorId) {
-        this.tutorId = tutorId;
     }
 
     public String getCourseName() {
@@ -59,12 +58,15 @@ public class Course {
         this.courseDescription = courseDescription;
     }
 
-    public String getTutorName() {
-        return tutorName;
+    public Tutor getTutor() {
+        return tutor;
     }
 
-    public void setTutorName(String tutorName) {
-        this.tutorName = tutorName;
+    public void setTutor(Tutor tutor) {
+        this.tutor = tutor;
     }
 
+    public List<Review> getReviews() {
+        return reviews;
+    }
 }

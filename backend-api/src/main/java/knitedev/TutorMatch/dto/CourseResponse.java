@@ -2,11 +2,12 @@ package knitedev.TutorMatch.dto;
 import knitedev.TutorMatch.entity.Course;
 
 public record CourseResponse(
+    long id,
     String courseName,
-    String courseDescription,
-    String tutorName
+    String tutorName,
+    String courseDescription
 ) {
     public static CourseResponse from (Course course) {
-        return new CourseResponse(course.getCourseName(), course.getCourseDescription(), course.getTutorName());
+        return new CourseResponse(course.getId(), course.getCourseName(), course.getTutor().getName(), course.getCourseDescription());
     }
 }

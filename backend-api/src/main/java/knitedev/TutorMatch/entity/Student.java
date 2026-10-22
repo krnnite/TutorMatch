@@ -1,5 +1,8 @@
 package knitedev.TutorMatch.entity;
 import java.time.LocalDate;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -14,27 +17,34 @@ public class Student {
     private long id;
     
     @NotBlank 
-    @Size(max = 50) 
+    @Size(max = 50)
+    @Column(length = 50, nullable = false) 
     private String name;
 
     @NotBlank 
     @Size(max = 50)
+    @Column(length = 50, nullable = false, unique = true)
     private String username;
 
     @NotBlank 
     @Size(min = 8, max = 74)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @Column(length = 74, nullable = false)
     private String password;
     
     @PastOrPresent
-    @NotNull 
+    @NotNull
+    @Column(nullable = false) 
     private LocalDate dayJoined;
 
     @NotBlank
     @Size(max = 60)
+    @Column(length = 60, nullable = false)
     private String educationLevel;
 
     @NotBlank
     @Size(max = 1000)
+    @Column(length = 1000, nullable = false)
     private String biography;
 
     public long getId() {
@@ -51,6 +61,22 @@ public class Student {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     public LocalDate getDayJoined() {

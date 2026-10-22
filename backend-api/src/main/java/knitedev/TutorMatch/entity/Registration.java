@@ -1,6 +1,9 @@
 package knitedev.TutorMatch.entity;
+import java.time.LocalDate;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PastOrPresent;
 
 @Entity
 @Table(name = "registrations")
@@ -8,15 +11,21 @@ public class Registration {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
-    @NotNull 
-    private long tutorId;
     
-    @NotNull 
-    private long studentId;
+    @PastOrPresent 
+    @NotNull
+    @Column(nullable = false) 
+    private LocalDate dayRegistered;
 
-    @NotNull 
-    private long courseId;
+    @NotNull
+    @ManyToOne(fetch = FetchType.LAZY, optional = false) 
+    @JoinColumn(name = "student_id", nullable = false) 
+    private Student student;
+
+    @NotNull
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "course_id", nullable = false) 
+    private Course course;
 
     public long getId() {
         return id;
@@ -26,28 +35,27 @@ public class Registration {
         this.id = id;
     }
 
-    public long getTutorId() {
-        return tutorId;
+    public LocalDate getDayRegistered() {
+        return dayRegistered;
     }
 
-    public void setTutorId(long tutorId) {
-        this.tutorId = tutorId;
+    public void setDayRegistered(LocalDate dayRegistered) {
+        this.dayRegistered = dayRegistered;
     }
 
-    public long getStudentId() {
-        return studentId;
+    public Student getStudent() {
+        return student;
     }
 
-    public void setStudentId(long studentId) {
-        this.studentId = studentId;
+    public void setStudent(Student student) {
+        this.student = student;
     }
 
-    public long getCourseId() {
-        return courseId;
+    public Course getCourse() {
+        return course;
     }
 
-    public void setCourseId(long courseId) {
-        this.courseId = courseId;
+    public void setCourse(Course course) {
+        this.course = course;
     }
-
 }
