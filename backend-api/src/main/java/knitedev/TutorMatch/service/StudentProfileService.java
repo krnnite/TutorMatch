@@ -7,6 +7,8 @@ import knitedev.TutorMatch.dto.StudentRegistrationRequest;
 import knitedev.TutorMatch.dto.StudentResponse;
 import knitedev.TutorMatch.repository.StudentRepository;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
+
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Service 
@@ -28,6 +30,11 @@ public class StudentProfileService {
 
     public Student findStudent(long studentId) {
         return studentRepository.findById(studentId).orElseThrow(() -> new NotFoundException("student " + studentId + " was not found."));
+    }
+
+    public List<StudentResponse> findAllStudents() {
+        List<Student> student = studentRepository.findAll();
+        return student.stream().map(StudentResponse::from).toList();
     }
 
     public StudentResponse register(StudentRegistrationRequest request) {

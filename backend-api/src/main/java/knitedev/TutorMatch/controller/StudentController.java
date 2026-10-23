@@ -1,6 +1,9 @@
 package knitedev.TutorMatch.controller;
 import java.net.URI;
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -41,5 +44,15 @@ public class StudentController {
     public ResponseEntity<RegistrationResponse> bookCourse(@PathVariable Long studentId, @Valid @RequestBody RegistrationRequest request) {
         RegistrationResponse registration = registrationService.create(request);
         return ResponseEntity.created(URI.create("/api/students/" + studentId + "/courses/" + registration.id())).body(registration);
+    }
+
+    @GetMapping 
+    public List<StudentResponse> getAll() {
+        return studentService.findAllStudents();
+    }
+
+    @GetMapping("/{studentId}")
+    public StudentResponse getStudent(@PathVariable long studentId) {
+        return studentService.getProfile(studentId);
     }
 }
