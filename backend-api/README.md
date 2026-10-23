@@ -23,10 +23,12 @@ transitions.
 
 | Method | Path                            | Purpose                                                    | Response code | Error codes | User story                                                              |
 | ------ | ------------------------------- | ---------------------------------------------------------- | ------------- | ----------- | ----------------------------------------------------------------------- |
-| `POST` | `/api/students`                | Register a student profile                                | `201 Created` | `400, 409`  | [US-1](../docs/TutorMatchSRS.md#L44)                                      |
+| `POST` | `/api/students`                | Register a student profile                                | `201 Created` | `400, 409`  | [US-1](../docs/TutorMatchSRS.md#L44)
+| `GET`  | `/api/students`   | Read all student profiles                                    | `200 OK`      | `404`       | [US-1](../docs/TutorMatchSRS.md#L44)                                      |                                      |
 | `GET`  | `/api/students/{studentId}`   | Read a student profile                                    | `200 OK`      | `404`       | [US-1](../docs/TutorMatchSRS.md#L44)                                      |
 | `PUT`  | `/api/students/{studentId}`   | Update a student profile                                  | `200 OK`      | `400, 404, 409` | [US-1](../docs/TutorMatchSRS.md#L44)                                   |
-| `POST` | `/api/tutors`                 | Register a tutor profile                                 | `201 Created` | `400, 409`  | [US-5](../docs/TutorMatchSRS.md#L85)                                      |
+| `POST` | `/api/tutors`                 | Register a tutor profile                                 | `201 Created` | `400, 409`  | [US-5](../docs/TutorMatchSRS.md#L85)
+| `GET`  | `/api/tutors/`     | Read all tutor profiles                                     | `200 OK`      | `404`       | [US-5](../docs/TutorMatchSRS.md#L85)                                      |                                      |
 | `GET`  | `/api/tutors/{tutorId}`     | Read a tutor profile                                     | `200 OK`      | `404`       | [US-5](../docs/TutorMatchSRS.md#L85)                                      |
 | `PUT`  | `/api/tutors/{tutorId}`     | Update a tutor profile                                   | `200 OK`      | `400, 404, 409` | [US-5](../docs/TutorMatchSRS.md#L85)                                   |
 

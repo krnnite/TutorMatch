@@ -8,6 +8,8 @@ import knitedev.TutorMatch.dto.TutorUpdateRequest;
 import knitedev.TutorMatch.entity.Tutor;
 import knitedev.TutorMatch.repository.TutorRepository;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
+
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 
@@ -30,6 +32,11 @@ public class TutorProfileService {
 
     public Tutor findTutor(long tutorId) {
         return tutorRepository.findById(tutorId).orElseThrow(() -> new NotFoundException("Tutor " + tutorId + " was not found."));
+    }
+
+    public List<TutorResponse> findAllTutors() {
+        List<Tutor> tutors = tutorRepository.findAll();
+        return tutors.stream().map(TutorResponse::from).toList();
     }
 
     public TutorResponse register(TutorRegistrationRequest request) {
