@@ -1,0 +1,25 @@
+body {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    line-height: 1.6;
+    background-color: #fff;
+    overflow-x: hidden;
+    font-size: 16px;
+    color: #333;
+}
+address {
+    line-height: inherit;
+}
+.tutormatch-hero {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.tutormatch-hero.overlay {
+    position: relative;
+}
+.site-footer {
+    background: #a34cef;
+    color: #311549;
+    font-size: 14px;
+}
