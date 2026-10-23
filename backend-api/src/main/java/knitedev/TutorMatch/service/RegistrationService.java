@@ -6,7 +6,6 @@ import knitedev.TutorMatch.dto.RegistrationResponse;
 import knitedev.TutorMatch.entity.Course;
 import knitedev.TutorMatch.entity.Registration;
 import knitedev.TutorMatch.entity.Student;
-import knitedev.TutorMatch.entity.Tutor;
 import knitedev.TutorMatch.repository.CourseRepository;
 import knitedev.TutorMatch.repository.RegistrationRepository;
 import knitedev.TutorMatch.repository.StudentRepository;

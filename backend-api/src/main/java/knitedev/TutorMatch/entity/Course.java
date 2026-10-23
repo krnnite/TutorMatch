@@ -1,7 +1,6 @@
 package knitedev.TutorMatch.entity;
 import java.util.ArrayList;
 import java.util.List;
-import org.hibernate.validator.constraints.UniqueElements;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
