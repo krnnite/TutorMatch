@@ -72,13 +72,13 @@ Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`
   ```
 
 - **US‑4 — Viewing Current Tutors**  
-  _Story:_ As a customer, I want … so that …  
+  _Story:_ As a customer, I want to register for courses so that I can learn from a tutor 
   _Acceptance:_
   ```gherkin
-  Scenario: Viewing currently enrolled tutors
+  Scenario: Registering for a course
     Given When logged in as a Student
-    When  Going to the "my profile" page
-    Then  There will be a list of tutors you are currently connected with.
+    When  Going to the student dashboard/courses page
+    Then  There will be a list of courses that I can register myself for.
   ```
 
 ### 2.2 Provider Stories
@@ -113,14 +113,14 @@ Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`
     Then  I should be able to view all the students that I have to tutor
   ```
 
-- **US-8 — Create Private Notes**  
-  _Story:_ As a provider, I want to be to write private notes for myself about my students so I can remember quick, key details
+- **US-8 — Create Course**  
+  _Story:_ As a provider, I want to be to create courses so students can register for them
   _Acceptance:_
   ```gherkin
-  Scenario: Writing a Private Note on a Student
+  Scenario: Creating a course for students
     Given I am logged in as a tutor
-    When  I click on a student from my dashboard
-    Then  I should be able to attach a note to their information that only I can see
+    When  I click on create course from my dashboard
+    Then  I should be able to create a course that students can see
   ```
 
 ### 2.3 SysAdmin Stories
