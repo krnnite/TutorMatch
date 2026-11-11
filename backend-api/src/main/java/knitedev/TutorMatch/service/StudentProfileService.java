@@ -2,7 +2,9 @@ package knitedev.TutorMatch.service;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import knitedev.TutorMatch.entity.Student;
+import knitedev.TutorMatch.entity.Tutor;
 import knitedev.TutorMatch.dto.StudentUpdateRequest;
+import knitedev.TutorMatch.dto.TutorResponse;
 import knitedev.TutorMatch.dto.StudentRegistrationRequest;
 import knitedev.TutorMatch.dto.StudentResponse;
 import knitedev.TutorMatch.repository.StudentRepository;
@@ -68,5 +70,14 @@ public class StudentProfileService {
         student.setBiography(request.biography());
         student.setEducationLevel(request.educationLevel());
         return StudentResponse.from(studentRepository.save(student));
+    }
+
+    @Transactional(readOnly = true)
+    public StudentResponse authenticate(String username, String password) {
+        Student student = studentRepository.findByUsernameIgnoreCase(username.trim()).orElseThrow(() -> new BadRequestException("Invalid username or password."));
+        if (!passwordEncoder.matches(password, student.getPassword())) {
+            throw new BadRequestException("Invalid username or password.");
+        }
+        return StudentResponse.from(student);
     }
 }

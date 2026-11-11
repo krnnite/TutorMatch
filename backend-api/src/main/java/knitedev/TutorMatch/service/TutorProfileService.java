@@ -71,4 +71,13 @@ public class TutorProfileService {
         tutor.setEducationLevel(request.educationLevel());
         return TutorResponse.from(tutorRepository.save(tutor));
     }
+
+    @Transactional(readOnly = true)
+    public TutorResponse authenticate(String username, String password) {
+        Tutor tutor = tutorRepository.findByUsernameIgnoreCase(username.trim()).orElseThrow(() -> new BadRequestException("Invalid username or password."));
+        if (!passwordEncoder.matches(password, tutor.getPassword())) {
+            throw new BadRequestException("Invalid username or password.");
+        }
+        return TutorResponse.from(tutor);
+    }
 }
