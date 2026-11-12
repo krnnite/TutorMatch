@@ -9,4 +9,5 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     boolean existsByUsernameIgnoreCase(String username);
     Optional<Student> findById(long studentId);
     List<Student> findAll();
+    Optional<Student> findByUsernameIgnoreCase(String username);
 }

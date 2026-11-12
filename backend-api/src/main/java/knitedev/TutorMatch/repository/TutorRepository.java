@@ -9,4 +9,5 @@ public interface TutorRepository extends JpaRepository<Tutor, Long> {
     boolean existsByUsernameIgnoreCase(String username);
     Optional<Tutor> findById(long tutorId);
     List<Tutor> findAll();
+    Optional<Tutor> findByUsernameIgnoreCase(String username);
 }

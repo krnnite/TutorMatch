@@ -69,4 +69,13 @@ public class StudentProfileService {
         student.setEducationLevel(request.educationLevel());
         return StudentResponse.from(studentRepository.save(student));
     }
+
+    @Transactional(readOnly = true)
+    public StudentResponse authenticate(String username, String password) {
+        Student student = studentRepository.findByUsernameIgnoreCase(username.trim()).orElseThrow(() -> new BadRequestException("Invalid username or password."));
+        if (!passwordEncoder.matches(password, student.getPassword())) {
+            throw new BadRequestException("Invalid username or password.");
+        }
+        return StudentResponse.from(student);
+    }
 }

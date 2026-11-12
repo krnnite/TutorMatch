@@ -8,6 +8,8 @@ import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
@@ -35,6 +37,7 @@ public class Tutor {
 
     @PastOrPresent 
     @NotNull
+    @DateTimeFormat(pattern = "yyyy-MM-dd") 
     @Column(nullable = false) 
     private LocalDate dayJoined;
 
