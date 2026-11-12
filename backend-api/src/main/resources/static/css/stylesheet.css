@@ -1,32 +1,51 @@
-.tutormatch-hero {
-    position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/index_largeimage.jpg') no-repeat center center;
-    background-size: cover;
-    min-height: 70vh;
-    display: flex;
-    align-items: center;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-}
-
-.hero-heading {
-    color: #ffc107; 
-}
-
-.hero-description {
-    color: #e2e8f0; 
-}
-
 body {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    line-height: 1.6;
+    background-color: #fff;
+    overflow-x: hidden;
+    font-size: 16px;
+    color: #333;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+
+address {
+    line-height: inherit;
 }
 
 #main-content {
     flex: 1 0 auto;
 }
 
+.tutormatch-hero {
+    background-image: linear-gradient(rgba(49, 21, 73, 0.75), rgba(49, 21, 73, 0.75)), url('../img/index_largeimage.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+.tutormatch-hero.overlay {
+    position: relative;
+}
+
+.hero-heading {
+    color: #ffd700;
+}
+
+.hero-description {
+    color: #f3e8ff;
+}
+
 .site-footer {
+    background: #a34cef;
+    color: #311549;
+    font-size: 14px;
     flex-shrink: 0;
 }
