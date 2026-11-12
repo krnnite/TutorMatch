@@ -6,22 +6,30 @@
                 <aside class="profile-sidebar">
                     <div class="profile-picture">Profile Picture</div>
                     <div class="profile-information">
-                        <h1>${(tutor.getName())! 'User Name'}</h1>
+                        <h1>${(tutor.name)! 'User Name'}</h1>
                         <div class="profile-item">
                             <span class="profile-label">Education Level</span>
-                            <span>${(tutor.getEducationLevel())! 'N/A'}</span>
+                            <span>${(tutor.educationLevel)! 'N/A'}</span>
                         </div>
                         <div class="profile-item">
                             <span class="profile-label">Biography</span>
-                            <span>${(tutor.getBiography())! 'No biography provided yet.'}</span>
+                            <span>${(tutor.biography)! 'No biography provided yet.'}</span>
                         </div>
                         <div class="profile-item">
                             <span class="profile-label">Date Joined</span>
-                            <span>${(tutor.getDayJoined())! ''}</span>
+                            <span>${(tutor.dayJoined)! ''}</span>
                         </div>
                     </div>
                     <a href="/tutors/edit-profile" class="edit-button">Edit Profile</a>
                 </aside>
+                <section>
+                    <div>
+                        <h1>Current Students</h1>
+                    </div>
+                    <div class="dashboard-grid">
+                        <h5>No students have registered yet...</h3>
+                    </div>
+                </section>
             </div>
         </main>
     </body>

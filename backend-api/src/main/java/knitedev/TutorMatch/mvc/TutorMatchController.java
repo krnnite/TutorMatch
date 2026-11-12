@@ -9,6 +9,7 @@ import jakarta.validation.Valid;
 import knitedev.TutorMatch.dto.StudentResponse;
 import knitedev.TutorMatch.dto.TutorRegistrationRequest;
 import knitedev.TutorMatch.dto.TutorResponse;
+import knitedev.TutorMatch.entity.Tutor;
 import knitedev.TutorMatch.service.BadRequestException;
 import knitedev.TutorMatch.service.StudentProfileService;
 import knitedev.TutorMatch.service.TutorProfileService;
@@ -67,7 +68,7 @@ public class TutorMatchController {
             return "redirect:/login";
         }
         
-        TutorResponse tutor = tutorProfileService.getProfile(userId);
+        Tutor tutor = tutorProfileService.findTutor(userId);
         model.addAttribute("tutor", tutor);
         return "tutors/dashboard";
     }
