@@ -1,5 +1,6 @@
 package knitedev.TutorMatch.mvc;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -53,12 +54,25 @@ public class TutorMatchController {
         return "redirect:/students/dashboard";
     }
 
-    @GetMapping("/tutor/register")
+    @GetMapping("/tutors/create-profile")
     public String registerTutor() {
-        return "tutor/register";
+        return "tutors/create-profile";
     }
 
-    @PostMapping("/tutor/register")
+    @GetMapping("/tutors/dashboard")
+    public String tutorDashboard(HttpSession session, Model model) {
+        Long userId = (Long) session.getAttribute("userId");
+        
+        if (userId == null) {
+            return "redirect:/login";
+        }
+        
+        TutorResponse tutor = tutorProfileService.getProfile(userId);
+        model.addAttribute("tutor", tutor);
+        return "tutors/dashboard";
+    }
+
+    @PostMapping("/tutors/create-profile")
     public String createTutor(@Valid TutorRegistrationRequest request, HttpSession session) {
         TutorResponse tutor = tutorProfileService.register(request);
         setSession(session, tutor.id(), "tutor", tutor.name());

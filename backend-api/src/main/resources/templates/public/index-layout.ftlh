@@ -28,7 +28,7 @@
                             <a class="nav-link" href="">Students</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Tutors</a>
+                            <a class="nav-link" href="/login">Tutors</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="">Courses</a>
